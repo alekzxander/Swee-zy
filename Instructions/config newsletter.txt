@@ -1,0 +1,18 @@
+Configuration Newsletter
+
+Par MailChimp
+
+Créer un compte sur https://mailchimp.com/
+Créer et configurer une liste
+Récupérer l'ID de la liste (Settings de la liste => List Name & defaults => List ID)
+Créer et récupérer la clé API (Accounts => Extras => API keys)
+Configurer les variables MAILCHIMPAPIKEY et MAILCHIMPLISTID du fichier config/config.php
+
+WARNING. En local, l'appel à l'api mailchimp utilise le https. 
+il faut donc modifier le fichier librairies/Mailchimp.php ligne 225 et ajouter la ligne
+curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
+
+Par BDD
+Créer une base de donnée et table (fichier database.sql)
+Configurer les variables DB_HOST,DB_NAME,DB_LOGIN,DB_PASSWORD du fichier config/config.php
+
